@@ -11,10 +11,10 @@ public class Esporte{
 
     private void validarNome(String nome){
         if(nome == null || nome.trim().isEmpty()){ //not null
-            throw new IllegalArgumentException("O esporte não pode ser vazio");
+            throw new IllegalArgumentException("O nome não pode ser vazio");
         }
         if(nome.length() > 50){ //varchar(100)
-            throw new IllegalArgumentException("O esporte não pode ter mais que 50 caracteres");
+            throw new IllegalArgumentException("O nome não pode ter mais que 50 caracteres");
         }
     }
 
