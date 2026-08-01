@@ -13,7 +13,7 @@ public class Esporte{
         if(nome == null || nome.trim().isEmpty()){ //not null
             throw new IllegalArgumentException("O nome não pode ser vazio");
         }
-        if(nome.length() > 50){ //varchar(100)
+        if(nome.length() > 50){ //varchar(50)
             throw new IllegalArgumentException("O nome não pode ter mais que 50 caracteres");
         }
     }
