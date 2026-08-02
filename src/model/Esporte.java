@@ -22,7 +22,22 @@ public class Esporte{
         return id;
     }
 
+    public void setId(Integer id){
+        this.id = id;
+    }
+
     public String getNome(){
         return nome;
+    }
+
+    public void setNome(String nome){
+        validarNome(nome);
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString(){
+        return "\nID: " + this.getId() +
+                "\nNome: " + this.getNome();
     }
 }

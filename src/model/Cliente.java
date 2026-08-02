@@ -51,16 +51,35 @@ public class Cliente{
         return id;
     }
 
+    public void setId(Integer id){
+        this.id = id;
+    }
+
     public String getNome(){
         return nome;
+    }
+
+    public void setNome(String nome){
+        validarNome(nome);
+        this.nome = nome;
     }
 
     public String getCpf(){
         return cpf;
     }
 
+    public void setCpf(String cpf){
+        validarCpf(cpf);
+        this.cpf = cpf;
+    }
+
     public String getTelefone(){
         return telefone;
+    }
+
+    public void setTelefone(String telefone){
+        validarTelefone(telefone);
+        this.telefone = telefone;
     }
 
     public LocalDateTime getData_cadastro(){
