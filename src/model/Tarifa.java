@@ -1,25 +1,23 @@
 package model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.time.DayOfWeek;
 import java.time.LocalTime;
-import java.time.LocalDateTime;
 
 public class Tarifa{
     private Integer id;
     private Quadra quadra;
-    private Integer dia_semana;
+    private DayOfWeek dia_semana;
     private LocalTime hora_inicio;
     private LocalTime hora_fim;
     private BigDecimal preco_hora;
 
-    public Tarifa(Quadra quadra_id, Integer dia_semana, LocalTime hora_inicio,
+    public Tarifa(Quadra quadra, DayOfWeek dia_semana, LocalTime hora_inicio,
                   LocalTime hora_fim, BigDecimal preco_hora){
         validarQuadra(quadra);
         this.quadra = quadra;
         validarDia_semana(dia_semana);
         this.dia_semana = dia_semana;
-        validarHora_inicio(hora_inicio);
 
         checagem_horario(hora_inicio, hora_fim);
         this.hora_inicio = hora_inicio;
@@ -35,15 +33,9 @@ public class Tarifa{
         }
     }
 
-    private void validarDia_semana(Integer dia_semana){
+    private void validarDia_semana(DayOfWeek dia_semana){
         if(dia_semana == null){
             throw new IllegalArgumentException("O dia da semana não pode ser nulo");
-        }
-        if(dia_semana > 7){
-            throw new IllegalArgumentException("O dia da semana não pode ser acima de 7");
-        }
-        if(dia_semana < 1){
-            throw new IllegalArgumentException("O dia da semana não pode ser menor que 1");
         }
     }
 
@@ -96,11 +88,11 @@ public class Tarifa{
         this.quadra = quadra;
     }
 
-    public Integer getDia_semana(){
+    public DayOfWeek getDia_semana(){
         return dia_semana;
     }
 
-    public void setDia_semana(Integer dia_semana){
+    public void setDia_semana(DayOfWeek dia_semana){
         this.dia_semana = dia_semana;
     }
 
